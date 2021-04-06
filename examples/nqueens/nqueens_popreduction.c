@@ -65,7 +65,7 @@ int main()
     float epsilon = 0.000001;
     /* results data. */
     FILE *results;
-    results = fopen("RESULTS_nqueens200_popreduction.txt", "w");
+    results = fopen("RESULTS/RESULTS_nqueens200_popreduction.txt", "w");
     /* time structs to get total algorithm time. */
     struct timeval stop, start;
 
