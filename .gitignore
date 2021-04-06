@@ -1,0 +1,7 @@
+# Ignoring 'tests' and 'GA_float' folders #
+**/tests
+GA_float/**
+# Ignoring executable files #
+*.out
+*.o
+*.exe
