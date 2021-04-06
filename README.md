@@ -22,7 +22,7 @@ Bellow is a compilation of [nqueens.c example](examples/nqueens/) with gcc (exec
 gcc -c -Wall ../../GA_int/GA_int.c
 gcc -c -Wall nqueens.c
 gcc -c -Wall ../../generals/generals.c
-gcc -o nqueens.out GA_int.o nqueens.o generals.o && \
+gcc -o nqueens.out GA_int.o nqueens.o generals.o
 ```
 
 I usually use an alias (inside .bashrc) to compile all together
@@ -139,7 +139,7 @@ int_free_population(struct IntPopulation *pop);
 This will free all alloc'd pointers used through the algorithm.
 
 #### Out-of-the-box alternative!
-Instead of individually calling the three main operator functions ([tournament](#tournament-selection), [crossover](#crossover) and [mutation](#mutation)), the user can call the function _int\_ga\_one\_iter_ which does it automatically (greatly facilitating things); it will basically perform one iteration of the genetic algorithm (including evaluation). With this, the user do not need to use the external pointers or any other GA operator, everything is handled by this function. The only think the user must do is [start the population](#population-init-and-free) and free it once the algorithm ends.
+Instead of individually calling the three main operator functions ([tournament](#tournament-selection), [crossover](#crossover) and [mutation](#mutation)), the user can call the function _int\_ga\_one\_iter_  which does it automatically (greatly facilitating things); it will basically perform one iteration of the genetic algorithm (including evaluation). With this, the user do not need to use the external pointers or any other GA operator, everything is handled by this function. The only think the user must do is [start the population](#population-init-and-free) and [free](#ending-the-algorithm) it once the algorithm ends.
 ```
 void
 int_ga_one_iter(struct IntPopulation *pop,
