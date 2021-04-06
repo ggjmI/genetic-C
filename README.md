@@ -38,7 +38,7 @@ rm GA_int.o nqueens.o generals.o'
 ## Integer implementation (GA\_int)
 GA\_int is the GA integer implementation. It consists of:
 
-- **GA\_int.h** : header with the main [struct IntPopulation](###-struct-intpopulation), defines and function declarations.
+- **GA\_int.h** : header with the main [struct IntPopulation](#struct-intpopulation), defines and function declarations.
 - **GA\_int.c** : source with function definitions.
 
 ### Struct IntPopulation
@@ -116,7 +116,7 @@ This will perform mutation to each gene with a rate of _mutate\_rate_. The indiv
 
 #### Linking the operators:
 
-After calling those three functions (operators), which is basically one iteration of GA, one [new evaluation](###-population-init-and-eval) must occur. This is basically repeated in your main loop until the end condition is met.
+After calling those three functions (operators), which is basically one iteration of GA, one [new evaluation](#population-init-and-eval) must occur. This is basically repeated in your main loop until the end condition is met.
 To work with elitism cases or any other in which _parents_, _childs_ and _new\_individuals_ must be manually created, the external pointers bellow can be used:
 ```
 int **ext_parents, **ext_childs, **ext_new_individuals, ext_ptrs_state;
@@ -139,7 +139,7 @@ int_free_population(struct IntPopulation *pop);
 This will free all alloc'd pointers used through the algorithm.
 
 #### Out-of-the-box alternative!
-Instead of individually calling the three main operator functions ([tournament](####-tournament-selection), [crossover](####-crossover) and [mutation](####-mutation)), the user can call the function _int\_ga\_one\_iter_ which does it automatically (greatly facilitating things); it will basically perform one iteration of the genetic algorithm (including evaluation). With this, the user do not need to use the external pointers or any other GA operator, everything is handled by this function. The only think the user must do is [start the population](###-population-init-and-free) and free it once the algorithm ends.
+Instead of individually calling the three main operator functions ([tournament](#tournament-selection), [crossover](#crossover) and [mutation](#mutation)), the user can call the function _int\_ga\_one\_iter_ which does it automatically (greatly facilitating things); it will basically perform one iteration of the genetic algorithm (including evaluation). With this, the user do not need to use the external pointers or any other GA operator, everything is handled by this function. The only think the user must do is [start the population](#population-init-and-free) and free it once the algorithm ends.
 ```
 void
 int_ga_one_iter(struct IntPopulation *pop,
